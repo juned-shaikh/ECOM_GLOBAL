@@ -47,10 +47,13 @@ export class ContactService {
     }
 
     // Prepare template parameters for EmailJS
+    const fullPhoneNumber = formData.phone ? 
+      `${formData.countryCode || ''}${formData.phone}` : 'Not provided';
+    
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
-      phone: formData.phone || 'Not provided',
+      phone: fullPhoneNumber,
       company: formData.company || 'Not provided',
       message: formData.message,
       to_email: this.RECIPIENT_EMAIL,
@@ -89,27 +92,67 @@ export class ContactService {
            this.RECIPIENT_EMAIL !== 'your-email@example.com';
   }
 
-  // Alternative method using a simple backend API
-  submitContactFormToBackend(formData: ContactForm): Observable<ContactSubmissionResponse> {
-    // This would be used if you have a backend API
-    // Example using HttpClient (you'd need to inject HttpClient)
+  // Netlify Forms submission (recommended)
+  submitToNetlify(formData: ContactForm): Observable<ContactSubmissionResponse> {
+    const formBody = new URLSearchParams();
+    formBody.append('form-name', 'contact');
+    formBody.append('name', formData.name);
+    formBody.append('email', formData.email);
+    formBody.append('countryCode', formData.countryCode || '');
     
-    // return this.http.post<ContactSubmissionResponse>('/api/contact', formData)
-    //   .pipe(
-    //     catchError((error) => {
-    //       console.error('Contact form submission failed:', error);
-    //       return of({
-    //         success: false,
-    //         message: 'Sorry, there was an error sending your message. Please try again.'
-    //       });
-    //     })
-    //   );
+    // Combine country code and phone number
+    const fullPhoneNumber = formData.phone ? 
+      `${formData.countryCode || ''}${formData.phone}` : '';
+    formBody.append('phone', fullPhoneNumber);
     
-    // For now, return a mock response
-    return from([{
-      success: true,
-      message: 'Thank you for your message! We will get back to you within 24 hours.'
-    }]);
+    formBody.append('company', formData.company || '');
+    formBody.append('message', formData.message);
+
+    return from(
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formBody.toString()
+      })
+    ).pipe(
+      map(() => ({
+        success: true,
+        message: 'Thank you for your message! We will get back to you within 24 hours.'
+      })),
+      catchError((error) => {
+        console.error('Netlify form submission failed:', error);
+        return of({
+          success: false,
+          message: 'Sorry, there was an error sending your message. Please try again.'
+        });
+      })
+    );
+  }
+
+  // Alternative method using Formspree
+  submitToFormspree(formData: ContactForm): Observable<ContactSubmissionResponse> {
+    // Get your form endpoint from formspree.io
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+    
+    return from(
+      fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+    ).pipe(
+      map(() => ({
+        success: true,
+        message: 'Thank you for your message! We will get back to you within 24 hours.'
+      })),
+      catchError((error) => {
+        console.error('Formspree submission failed:', error);
+        return of({
+          success: false,
+          message: 'Sorry, there was an error sending your message. Please try again.'
+        });
+      })
+    );
   }
 
   validateEmail(email: string): boolean {

@@ -29,6 +29,16 @@
               {{ submitMessage }}
             </div>
 
+            <!-- Hidden form for Netlify detection -->
+            <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+              <input type="text" name="name" />
+              <input type="email" name="email" />
+              <input type="text" name="countryCode" />
+              <input type="tel" name="phone" />
+              <input type="text" name="company" />
+              <textarea name="message"></textarea>
+            </form>
+
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
               <div class="row g-3">
                 <!-- Name Field -->
@@ -58,8 +68,32 @@
                 <!-- Phone Field -->
                 <div class="col-md-6">
                   <label for="phone" class="form-label">Phone Number</label>
-                  <input type="tel" class="form-control" id="phone" formControlName="phone"
-                    placeholder="Enter your phone number">
+                  <div class="input-group">
+                    <select class="form-select" formControlName="countryCode" style="max-width: 120px;">
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+91" selected>🇮🇳 +91</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+81">🇯🇵 +81</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+33">🇫🇷 +33</option>
+                      <option value="+39">🇮🇹 +39</option>
+                      <option value="+34">🇪🇸 +34</option>
+                      <option value="+86">🇨🇳 +86</option>
+                      <option value="+82">🇰🇷 +82</option>
+                      <option value="+65">🇸🇬 +65</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+966">🇸🇦 +966</option>
+                      <option value="+55">🇧🇷 +55</option>
+                      <option value="+52">🇲🇽 +52</option>
+                      <option value="+7">🇷🇺 +7</option>
+                      <option value="+90">🇹🇷 +90</option>
+                      <option value="+27">🇿🇦 +27</option>
+                      <option value="+234">🇳🇬 +234</option>
+                    </select>
+                    <input type="tel" class="form-control" id="phone" formControlName="phone"
+                      placeholder="Enter your phone number">
+                  </div>
                 </div>
 
                 <!-- Company Field -->
@@ -133,10 +167,10 @@
                 <h5 class="fw-bold mb-1">Call Us</h5>
                 <p class="text-muted mb-0">
                   <a href="tel:+1234567890" class="text-decoration-none">
-                    +1 (234) 567-8900
+                    +91 84356 83963
                   </a>
                 </p>
-                <small class="text-muted">Mon-Fri, 9AM-6PM EST</small>
+                <small class="text-muted">Mon-Fri, 9AM-6PM IST</small>
               </div>
             </div>
           </div>
@@ -149,9 +183,9 @@
               <div>
                 <h5 class="fw-bold mb-1">Visit Us</h5>
                 <p class="text-muted mb-0">
-                  123 Business District<br>
-                  Global Commerce Center<br>
-                  New York, NY 10001
+                  535 A Shop No 2 Sudama Nagar
+                  <br>
+                  Indore MP 452009
                 </p>
               </div>
             </div>

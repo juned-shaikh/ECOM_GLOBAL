@@ -15,7 +15,7 @@
     <div class="contact-info d-none d-lg-flex align-items-center me-4">
       <div class="contact-item me-4">
         <i class="bi bi-telephone text-success me-2"></i>
-        <span class="small">+1 (234) 567-8900</span>
+        <span class="small">+91 84356 83963</span>
       </div>
       <div class="contact-item">
         <i class="bi bi-envelope text-success me-2"></i>
@@ -48,15 +48,33 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" (click)="navigateToService('Amazon Global')">Amazon Global</a></li>
-            <li><a class="dropdown-item" (click)="navigateToService('Shopify')">Shopify</a></li>
-            <li><a class="dropdown-item" (click)="navigateToService('Flipkart')">Flipkart</a></li>
-            <li><a class="dropdown-item" (click)="navigateToService('Meesho')">Meesho</a></li>
-            <li><a class="dropdown-item" (click)="navigateToService('eBay')">eBay</a></li>
-            <li><a class="dropdown-item" (click)="navigateToService('Walmart')">Walmart</a></li>
-            <li><a class="dropdown-item" (click)="navigateToService('Etsy')">Etsy</a></li>
-            <li><a class="dropdown-item" (click)="navigateToService('Myntra')">Myntra</a></li>
-            <li><a class="dropdown-item" (click)="navigateToService('Ajio')">Ajio</a></li>
+
+            <!-- Core Services -->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Development</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" (click)="navigateToService('Ecommerce Web Designing')">Ecommerce Web
+                    Designing</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('Development')">Development</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('Digital Marketing')">Digital Marketing</a></li>
+              </ul>
+            </li>
+
+            <!-- Platform Services -->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">E-Commerce</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" (click)="navigateToService('Amazon Global')">Amazon Global</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('Shopify')">Shopify</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('Flipkart')">Flipkart</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('Meesho')">Meesho</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('eBay')">eBay</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('Walmart')">Walmart</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('Etsy')">Etsy</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('Myntra')">Myntra</a></li>
+                <li><a class="dropdown-item" (click)="navigateToService('Ajio')">Ajio</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li class="nav-item">

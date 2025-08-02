@@ -28,15 +28,22 @@ interface ServiceCategory {
   styleUrl: './services.component.css'
 })
 export class ServicesComponent {
-  
-  constructor(private router: Router) {}
-  
+
+  constructor(private router: Router) { }
+
   platforms: Platform[] = [
     {
       name: 'Amazon Global',
       logo: 'bi-amazon',
       description: 'World\'s largest e-commerce marketplace with global reach across 20+ countries.',
-      features: ['FBA Integration', 'Global Shipping', 'Prime Eligibility', 'Multi-language Support'],
+      features: ['Seller account launch/onboarding',
+        'Product listing/ cataloguing',
+        'Advertisement/PPC management ',
+        'Account health and performance monitoring',
+        'FBA Management',
+        'Reporting & analysis',
+        'A plus listing (Premium,Basic)',
+        'Complete account management',],
       marketReach: '300M+ Active Users',
       category: 'Global Marketplace',
       color: '#FF9900',
@@ -46,7 +53,12 @@ export class ServicesComponent {
       name: 'Shopify',
       logo: 'bi-shop',
       description: 'Leading e-commerce platform for building custom online stores with global capabilities.',
-      features: ['Custom Store Design', 'Payment Gateway', 'Inventory Management', 'SEO Optimization'],
+      features: ['Seller account launch/onboarding',
+'Product listing/ cataloguing',
+'Advertisement/PPC management ',
+'Account health and performance monitoring',
+'Reporting & analysis',
+'Complete account management',],
       marketReach: '175+ Countries',
       category: 'E-commerce Platform',
       color: '#7AB55C',
@@ -56,7 +68,12 @@ export class ServicesComponent {
       name: 'Flipkart',
       logo: 'bi-cart4',
       description: 'India\'s leading e-commerce platform with massive domestic market penetration.',
-      features: ['Flipkart Assured', 'Easy Returns', 'EMI Options', 'Regional Language Support'],
+      features: ['Seller account launch/onboarding',
+        'Product listing/ cataloguing',
+        'Advertisement/PPC management ',
+        'Account health and performance monitoring',
+        'Reporting & analysis',
+        'Complete account management',],
       marketReach: '450M+ Registered Users',
       category: 'Indian Marketplace',
       color: '#047BD6',
@@ -66,7 +83,12 @@ export class ServicesComponent {
       name: 'Meesho',
       logo: 'bi-people',
       description: 'Social commerce platform enabling resellers and small businesses to sell online.',
-      features: ['Zero Commission', 'Reseller Network', 'Social Selling', 'Bulk Orders'],
+      features: ['Seller account launch/onboarding',
+        'Product listing/ cataloguing',
+        'Advertisement/PPC management ',
+        'Account health and performance monitoring',
+        'Reporting & analysis',
+        'Complete account management',],
       marketReach: '100M+ Users',
       category: 'Social Commerce',
       color: '#E91E63',
@@ -76,7 +98,12 @@ export class ServicesComponent {
       name: 'eBay',
       logo: 'bi-globe',
       description: 'Global online auction and marketplace platform with international shipping.',
-      features: ['Auction Format', 'Global Shipping Program', 'Seller Protection', 'Best Match Algorithm'],
+      features: ['Seller account launch/onboarding',
+        'Product listing/ cataloguing',
+        'Advertisement/PPC management ',
+        'Account health and performance monitoring',
+        'Reporting & analysis',
+        'Complete account management',],
       marketReach: '190+ Countries',
       category: 'Global Marketplace',
       color: '#E53238',
@@ -86,7 +113,12 @@ export class ServicesComponent {
       name: 'Walmart',
       logo: 'bi-building',
       description: 'America\'s largest retailer with growing e-commerce and global marketplace presence.',
-      features: ['Walmart Fulfillment', 'Free 2-Day Shipping', 'Grocery Integration', 'B2B Solutions'],
+      features: ['Seller account launch/onboarding',
+        'Product listing/ cataloguing',
+        'Advertisement/PPC management ',
+        'Account health and performance monitoring',
+        'Reporting & analysis',
+        'Complete account management',],
       marketReach: '240M+ Weekly Customers',
       category: 'Retail Marketplace',
       color: '#004C91',
@@ -96,7 +128,12 @@ export class ServicesComponent {
       name: 'Etsy',
       logo: 'bi-heart',
       description: 'Global marketplace for unique, creative, and handmade items from independent sellers.',
-      features: ['Handmade Focus', 'Creative Community', 'Global Shipping', 'Seller Tools'],
+      features: ['Seller account launch/onboarding',
+        'Product listing/ cataloguing',
+        'Advertisement/PPC management ',
+        'Account health and performance monitoring',
+        'Reporting & analysis',
+        'Complete account management',],
       marketReach: '90M+ Active Buyers',
       category: 'Creative Marketplace',
       color: '#F16521',
@@ -106,7 +143,12 @@ export class ServicesComponent {
       name: 'Myntra',
       logo: 'bi-bag',
       description: 'India\'s leading fashion and lifestyle e-commerce platform owned by Flipkart.',
-      features: ['Fashion Focus', 'Brand Partnerships', 'Try & Buy', 'Style Recommendations'],
+      features: ['Seller account launch/onboarding',
+        'Product listing/ cataloguing',
+        'Advertisement/PPC management ',
+        'Account health and performance monitoring',
+        'Reporting & analysis',
+        'Complete account management',],
       marketReach: '50M+ Annual Shoppers',
       category: 'Fashion Marketplace',
       color: '#FF3F6C',
@@ -116,7 +158,12 @@ export class ServicesComponent {
       name: 'Ajio',
       logo: 'bi-star',
       description: 'Reliance\'s fashion and lifestyle platform targeting young, trendy consumers in India.',
-      features: ['Trendy Fashion', 'Exclusive Brands', 'Fast Fashion', 'Style Guides'],
+      features: ['Seller account launch/onboarding',
+        'Product listing/ cataloguing',
+        'Advertisement/PPC management ',
+        'Account health and performance monitoring',
+        'Reporting & analysis',
+        'Complete account management',],
       marketReach: '35M+ Users',
       category: 'Fashion Platform',
       color: '#D4AF37',
@@ -197,7 +244,7 @@ export class ServicesComponent {
     if (category === 'all') {
       return this.platforms;
     }
-    return this.platforms.filter(platform => 
+    return this.platforms.filter(platform =>
       platform.category.toLowerCase().includes(category.toLowerCase())
     );
   }

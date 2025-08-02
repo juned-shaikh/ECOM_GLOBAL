@@ -30,6 +30,7 @@ export class ContactComponent implements OnInit {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
+      countryCode: ['+91'],
       phone: [''],
       company: [''],
       message: ['', [Validators.required, Validators.minLength(10)]]
@@ -47,7 +48,8 @@ export class ContactComponent implements OnInit {
 
       const formData: ContactForm = this.contactForm.value;
 
-      this.contactService.submitContactForm(formData).subscribe({
+      // Use Netlify Forms (recommended) - change to submitContactForm() for EmailJS
+      this.contactService.submitToNetlify(formData).subscribe({
         next: (response) => {
           this.isSubmitting = false;
           this.submitSuccess = response.success;

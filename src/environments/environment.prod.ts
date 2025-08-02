@@ -4,6 +4,6 @@ export const environment = {
     serviceId: 'YOUR_SERVICE_ID',
     templateId: 'YOUR_TEMPLATE_ID',
     publicKey: 'YOUR_PUBLIC_KEY',
-    recipientEmail: 'your-email@example.com'
+    recipientEmail: 'info@ecomglobaltech.com'
   }
 };

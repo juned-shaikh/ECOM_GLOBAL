@@ -1,0 +1,158 @@
+.navbar {
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.brand-name {
+  color: #2d3748;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #28a745;
+}
+
+.logo-container {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.contact-info {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-spacer {
+  height: 90px;
+}
+
+.nav-link {
+  color: #2d3748 !important;
+  font-weight: 600;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #28a745 !important;
+}
+
+.nav-link.active {
+  color: #28a745 !important;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: #28a745;
+  border-radius: 2px;
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  color: #2d3748;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #28a745;
+  padding-left: 2rem;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: white;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .navbar-spacer {
+    height: 80px;
+  }
+  
+  .nav-link.active::after {
+    display: none;
+  }
+  
+  .btn-success {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 1.2rem;
+  }
+  
+  .tagline {
+    font-size: 0.7rem;
+  }
+  
+  .logo-container {
+    width: 40px;
+    height: 40px;
+  }
+}

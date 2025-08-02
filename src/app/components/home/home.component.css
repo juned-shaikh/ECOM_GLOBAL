@@ -1,0 +1,385 @@
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+.min-vh-60 {
+  min-height: 60vh;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.text-gradient-light {
+  background: linear-gradient(135deg, #ffffff, #e3f2fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-stats {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-stats .stat-item {
+  padding: 0.5rem;
+}
+
+/* Hero Animation */
+.hero-illustration {
+  position: relative;
+  z-index: 2;
+}
+
+.globe-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.hero-globe {
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.9);
+  animation: rotate 20s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-1 {
+  width: 200px;
+  height: 200px;
+  animation: orbit 15s linear infinite;
+}
+
+.orbit-2 {
+  width: 250px;
+  height: 250px;
+  animation: orbit 20s linear infinite reverse;
+}
+
+.orbit-3 {
+  width: 300px;
+  height: 300px;
+  animation: orbit 25s linear infinite;
+}
+
+.satellite {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #28a745;
+  font-size: 1.2rem;
+  top: -20px;
+  left: -20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Services Section */
+.services-section {
+  background: #f8f9fa;
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+  border: none;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(40, 167, 69, 0.15) !important;
+}
+
+.service-icon {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.service-icon i {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon i {
+  transform: scale(1.1);
+  color: #28a745 !important;
+}
+
+/* Benefits Section */
+.benefits-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.benefit-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
+}
+
+/* Success Section */
+.success-section {
+  background: white;
+}
+
+.stat-item {
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.stat-item:hover {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  transform: translateY(-5px);
+}
+
+.stat-item h3 {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+  opacity: 0.5;
+}
+
+.btn-light {
+  background-color: white;
+  border-color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-light {
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #e0a800, #e8590c);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+}
+
+/* Section Divider */
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border-radius: 2px;
+  margin: 1rem auto 2rem;
+}
+
+/* Benefit Items */
+.benefit-item {
+  padding: 2rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+/* CTA Features */
+.cta-features {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-item {
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: scale(1.05);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .display-5 {
+    font-size: 1.75rem;
+  }
+  
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .min-vh-60 {
+    min-height: auto;
+  }
+  
+  .globe-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-globe {
+    font-size: 5rem;
+  }
+  
+  .orbit-1 {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .orbit-2 {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .orbit-3 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .satellite {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    top: -15px;
+    left: -15px;
+  }
+  
+  .hero-stats {
+    margin-top: 2rem;
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+  }
+}

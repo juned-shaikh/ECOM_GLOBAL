@@ -1,0 +1,232 @@
+<!-- Page Header -->
+<section class="page-header text-white py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="display-4 fw-bold mb-3">Contact Us</h1>
+        <p class="lead">Ready to expand globally? Let's start the conversation.</p>
+        <div class="header-divider mx-auto"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section py-5">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Contact Form -->
+      <div class="col-lg-8">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h2 class="fw-bold text-success mb-4">Send Us a Message</h2>
+
+            <!-- Success/Error Message -->
+            <div *ngIf="submitMessage" class="alert" [class.alert-success]="submitSuccess"
+              [class.alert-danger]="!submitSuccess" role="alert">
+              <i class="bi" [class.bi-check-circle]="submitSuccess"
+                [class.bi-exclamation-triangle]="!submitSuccess"></i>
+              {{ submitMessage }}
+            </div>
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+              <div class="row g-3">
+                <!-- Name Field -->
+                <div class="col-md-6">
+                  <label for="name" class="form-label">
+                    Full Name <span class="text-danger">*</span>
+                  </label>
+                  <input type="text" class="form-control" id="name" formControlName="name"
+                    [class.is-invalid]="isFieldInvalid('name')" placeholder="Enter your full name">
+                  <div class="invalid-feedback" *ngIf="isFieldInvalid('name')">
+                    {{ getFieldError('name') }}
+                  </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="col-md-6">
+                  <label for="email" class="form-label">
+                    Email Address <span class="text-danger">*</span>
+                  </label>
+                  <input type="email" class="form-control" id="email" formControlName="email"
+                    [class.is-invalid]="isFieldInvalid('email')" placeholder="Enter your email address">
+                  <div class="invalid-feedback" *ngIf="isFieldInvalid('email')">
+                    {{ getFieldError('email') }}
+                  </div>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" formControlName="phone"
+                    placeholder="Enter your phone number">
+                </div>
+
+                <!-- Company Field -->
+                <div class="col-md-6">
+                  <label for="company" class="form-label">Company Name</label>
+                  <input type="text" class="form-control" id="company" formControlName="company"
+                    placeholder="Enter your company name">
+                </div>
+
+                <!-- Message Field -->
+                <div class="col-12">
+                  <label for="message" class="form-label">
+                    Message <span class="text-danger">*</span>
+                  </label>
+                  <textarea class="form-control" id="message" formControlName="message"
+                    [class.is-invalid]="isFieldInvalid('message')" rows="5"
+                    placeholder="Tell us about your project and how we can help you expand globally..."></textarea>
+                  <div class="invalid-feedback" *ngIf="isFieldInvalid('message')">
+                    {{ getFieldError('message') }}
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12">
+                  <button type="submit" class="btn btn-success btn-lg px-4" [disabled]="isSubmitting">
+                    <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status"
+                      aria-hidden="true"></span>
+                    <span *ngIf="isSubmitting">Sending...</span>
+                    <span *ngIf="!isSubmitting">Send Message</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="col-lg-4">
+        <div class="contact-info">
+          <h3 class="fw-bold text-success mb-4">Get In Touch</h3>
+          <p class="text-muted mb-4">
+            Ready to take your business global? Our team of experts is here to help you succeed in international
+            markets.
+          </p>
+
+          <!-- Contact Details -->
+          <div class="contact-item mb-4">
+            <div class="d-flex align-items-start">
+              <div class="contact-icon me-3">
+                <i class="bi bi-envelope-fill text-success fs-4"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-1">Email Us</h5>
+                <p class="text-muted mb-0">
+                  <a href="mailto:info&#64;ecomglobaltech.com" class="text-decoration-none">
+                    info&#64;ecomglobaltech.com
+                  </a>
+                </p>
+                <small class="text-muted">We respond within 24 hours</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item mb-4">
+            <div class="d-flex align-items-start">
+              <div class="contact-icon me-3">
+                <i class="bi bi-telephone-fill text-success fs-4"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-1">Call Us</h5>
+                <p class="text-muted mb-0">
+                  <a href="tel:+1234567890" class="text-decoration-none">
+                    +1 (234) 567-8900
+                  </a>
+                </p>
+                <small class="text-muted">Mon-Fri, 9AM-6PM EST</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item mb-4">
+            <div class="d-flex align-items-start">
+              <div class="contact-icon me-3">
+                <i class="bi bi-geo-alt-fill text-success fs-4"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-1">Visit Us</h5>
+                <p class="text-muted mb-0">
+                  123 Business District<br>
+                  Global Commerce Center<br>
+                  New York, NY 10001
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Response Time -->
+          <div class="response-time bg-light p-3 rounded">
+            <h6 class="fw-bold text-success mb-2">
+              <i class="bi bi-clock me-2"></i>Response Time
+            </h6>
+            <p class="text-muted mb-0 small">
+              We typically respond to all inquiries within 24 hours during business days.
+              For urgent matters, please call us directly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section bg-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="display-5 fw-bold text-success mb-3">Frequently Asked Questions</h2>
+        <p class="lead text-muted">Quick answers to common questions</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                How long does it take to expand to a new market?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                The timeline varies depending on your current setup and target markets. Typically, we can help you
+                launch in a new market within 4-8 weeks, including platform setup, localization, and compliance
+                requirements.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                What platforms do you work with?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                We work with all major e-commerce platforms including Shopify, WooCommerce, Magento, Amazon, eBay, and
+                many regional platforms. We'll recommend the best solution based on your target markets.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Do you provide ongoing support?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes! We offer comprehensive ongoing support including performance monitoring, optimization
+                recommendations, compliance updates, and strategic guidance to help you scale your global operations.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

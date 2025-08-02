@@ -1,0 +1,240 @@
+<!-- Hero Section -->
+<section class="hero-section text-white py-5">
+  <div class="container">
+    <div class="row align-items-center min-vh-60">
+      <div class="col-lg-6">
+        <div class="hero-content">
+          <h1 class="display-3 fw-bold mb-3 text-white">
+            Expand Your Business
+            <span class="text-gradient-light">Globally</span>
+          </h1>
+          <p class="lead mb-4 text-light">
+            Expert e-commerce consulting to help you sell worldwide with confidence
+          </p>
+          <p class="fs-5 mb-4 text-light opacity-90">
+            Transform your business with our proven strategies for international expansion.
+            We provide end-to-end solutions for global e-commerce success.
+          </p>
+          <div class="hero-stats mb-4">
+            <div class="row g-3">
+              <div class="col-4">
+                <div class="stat-item text-center">
+                  <h4 class="fw-bold text-white mb-0">150+</h4>
+                  <small class="text-light">Clients</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-item text-center">
+                  <h4 class="fw-bold text-white mb-0">50+</h4>
+                  <small class="text-light">Countries</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-item text-center">
+                  <h4 class="fw-bold text-white mb-0">300%</h4>
+                  <small class="text-light">Avg Growth</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a routerLink="/contact" class="btn btn-light btn-lg px-4 text-success fw-bold">
+              <i class="bi bi-rocket-takeoff me-2"></i>
+              Get Started Today
+            </a>
+            <a routerLink="/about" class="btn btn-outline-light btn-lg px-4">
+              <i class="bi bi-play-circle me-2"></i>
+              Watch Demo
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual text-center">
+          <div class="hero-illustration">
+            <div class="globe-container">
+              <i class="bi bi-globe2 hero-globe"></i>
+              <div class="orbit orbit-1">
+                <div class="satellite">
+                  <i class="bi bi-cart-check"></i>
+                </div>
+              </div>
+              <div class="orbit orbit-2">
+                <div class="satellite">
+                  <i class="bi bi-graph-up-arrow"></i>
+                </div>
+              </div>
+              <div class="orbit orbit-3">
+                <div class="satellite">
+                  <i class="bi bi-people"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Overview Section -->
+<section class="services-section py-5" id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="display-5 fw-bold text-success mb-3">Our Expert Services</h2>
+        <p class="lead text-muted">
+          Comprehensive e-commerce consulting solutions to help you succeed globally
+        </p>
+        <div class="section-divider mx-auto"></div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" *ngFor="let service of services">
+        <div class="card h-100 shadow-sm border-0 service-card">
+          <div class="card-body text-center p-4">
+            <div class="service-icon mb-3">
+              <i [class]="'bi ' + service.icon + ' display-4 text-success'"></i>
+            </div>
+            <h5 class="card-title fw-bold mb-3">{{ service.title }}</h5>
+            <p class="card-text text-muted">{{ service.description }}</p>
+            <a href="#" class="btn btn-outline-success btn-sm mt-2">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="benefits-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="display-5 fw-bold text-success mb-3">Why Choose Us</h2>
+        <p class="lead text-muted">
+          Partner with experts who understand global e-commerce challenges
+        </p>
+        <div class="section-divider mx-auto"></div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let benefit of benefits">
+        <div class="text-center benefit-item">
+          <div class="benefit-icon">
+            <i [class]="'bi ' + benefit.icon + ' display-4'"></i>
+          </div>
+          <h4 class="fw-bold mb-3">{{ benefit.title }}</h4>
+          <p class="text-muted">{{ benefit.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Client Success Section -->
+<section class="success-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="display-5 fw-bold text-success mb-3">Our Impact</h2>
+        <p class="lead text-muted">
+          Helping businesses achieve remarkable global growth
+        </p>
+        <div class="section-divider mx-auto"></div>
+      </div>
+    </div>
+    <div class="row g-4 text-center">
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-icon mb-3">
+            <i class="bi bi-people-fill display-4 text-success"></i>
+          </div>
+          <h3 class="display-4 fw-bold">150+</h3>
+          <p class="text-muted fw-semibold">Clients Served</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-icon mb-3">
+            <i class="bi bi-globe-americas display-4 text-success"></i>
+          </div>
+          <h3 class="display-4 fw-bold">50+</h3>
+          <p class="text-muted fw-semibold">Countries Reached</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-icon mb-3">
+            <i class="bi bi-graph-up-arrow display-4 text-success"></i>
+          </div>
+          <h3 class="display-4 fw-bold">300%</h3>
+          <p class="text-muted fw-semibold">Average Growth</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-icon mb-3">
+            <i class="bi bi-heart-fill display-4 text-success"></i>
+          </div>
+          <h3 class="display-4 fw-bold">98%</h3>
+          <p class="text-muted fw-semibold">Client Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section text-white py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="cta-content">
+          <h2 class="display-5 fw-bold mb-3">Ready to Sell Globally?</h2>
+          <p class="lead mb-4 opacity-90">
+            Let's discuss how we can help your business expand internationally and increase your online sales.
+          </p>
+          <div class="cta-features mb-4">
+            <div class="row g-3 justify-content-center">
+              <div class="col-md-3 col-6">
+                <div class="feature-item">
+                  <i class="bi bi-check-circle-fill text-white mb-2 fs-4"></i>
+                  <p class="small text-light mb-0">Free Consultation</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="feature-item">
+                  <i class="bi bi-lightning-charge-fill text-white mb-2 fs-4"></i>
+                  <p class="small text-light mb-0">Quick Setup</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="feature-item">
+                  <i class="bi bi-headset text-white mb-2 fs-4"></i>
+                  <p class="small text-light mb-0">Proven Results</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="feature-item">
+                  <i class="bi bi-headset text-white mb-2 fs-4"></i>
+                  <p class="small text-light mb-0">24/7 Support</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <a (click)="navigateToContact()" class="btn btn-light btn-lg px-5 text-success fw-bold">
+              <i class="bi bi-rocket-takeoff me-2"></i>
+              Start Your Journey
+            </a>
+            <a href="mailto:info&#64;ecomglobaltech.com" class="btn btn-outline-light btn-lg px-5">
+              <i class="bi bi-envelope me-2"></i>
+              Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

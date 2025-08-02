@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <div class="container">
+    <!-- Brand with Logo -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/home" (click)="closeMenu()">
+      <div class="logo-container me-3">
+        <i class="bi bi-globe2 "></i>
+      </div>
+      <div>
+        <strong class="brand-name">Ecom Global Tech</strong>
+        <small class="d-block text-success tagline">Sell globally with us...</small>
+      </div>
+    </a>
+
+    <!-- Contact Info (Desktop Only) -->
+    <div class="contact-info d-none d-lg-flex align-items-center me-4">
+      <div class="contact-item me-4">
+        <i class="bi bi-telephone text-success me-2"></i>
+        <span class="small">+1 (234) 567-8900</span>
+      </div>
+      <div class="contact-item">
+        <i class="bi bi-envelope text-success me-2"></i>
+        <span class="small">info&#64;ecomglobaltech.com</span>
+      </div>
+    </div>
+
+    <!-- Mobile menu toggle -->
+    <button class="navbar-toggler border-0" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen"
+      aria-controls="navbarNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation menu -->
+    <div class="collapse navbar-collapse" [class.show]="isMenuOpen" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" routerLink="/home" (click)="closeMenu()"
+            [class.active]="isActiveRoute('/home')">
+            Home
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-semibold dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false" [class.active]="isActiveRoute('/services')">
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/services" (click)="closeMenu()">All Services</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" (click)="navigateToService('Amazon Global')">Amazon Global</a></li>
+            <li><a class="dropdown-item" (click)="navigateToService('Shopify')">Shopify</a></li>
+            <li><a class="dropdown-item" (click)="navigateToService('Flipkart')">Flipkart</a></li>
+            <li><a class="dropdown-item" (click)="navigateToService('Meesho')">Meesho</a></li>
+            <li><a class="dropdown-item" (click)="navigateToService('eBay')">eBay</a></li>
+            <li><a class="dropdown-item" (click)="navigateToService('Walmart')">Walmart</a></li>
+            <li><a class="dropdown-item" (click)="navigateToService('Etsy')">Etsy</a></li>
+            <li><a class="dropdown-item" (click)="navigateToService('Myntra')">Myntra</a></li>
+            <li><a class="dropdown-item" (click)="navigateToService('Ajio')">Ajio</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" routerLink="/about" (click)="closeMenu()"
+            [class.active]="isActiveRoute('/about')">
+            About Us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" routerLink="/contact" (click)="closeMenu()"
+            [class.active]="isActiveRoute('/contact')">
+            Contact
+          </a>
+        </li>
+        <!-- <li class="nav-item ms-2">
+          <a routerLink="/contact" class="btn btn-success btn-sm px-3" (click)="closeMenu()">
+            Get Quote
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer to account for fixed navbar -->
+<div class="navbar-spacer"></div>

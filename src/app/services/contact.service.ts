@@ -47,9 +47,9 @@ export class ContactService {
     }
 
     // Prepare template parameters for EmailJS
-    const fullPhoneNumber = formData.phone ? 
+    const fullPhoneNumber = formData.phone ?
       `${formData.countryCode || ''}${formData.phone}` : 'Not provided';
-    
+
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
@@ -86,10 +86,10 @@ export class ContactService {
   }
 
   private isEmailJSConfigured(): boolean {
-    return this.SERVICE_ID !== 'YOUR_SERVICE_ID' && 
-           this.TEMPLATE_ID !== 'YOUR_TEMPLATE_ID' && 
-           this.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY' &&
-           this.RECIPIENT_EMAIL !== 'your-email@example.com';
+    return this.SERVICE_ID !== 'YOUR_SERVICE_ID' &&
+      this.TEMPLATE_ID !== 'YOUR_TEMPLATE_ID' &&
+      this.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY' &&
+      this.RECIPIENT_EMAIL !== 'your-email@example.com';
   }
 
   // Netlify Forms submission (recommended)
@@ -99,12 +99,12 @@ export class ContactService {
     formBody.append('name', formData.name);
     formBody.append('email', formData.email);
     formBody.append('countryCode', formData.countryCode || '');
-    
+
     // Combine country code and phone number
-    const fullPhoneNumber = formData.phone ? 
+    const fullPhoneNumber = formData.phone ?
       `${formData.countryCode || ''}${formData.phone}` : '';
     formBody.append('phone', fullPhoneNumber);
-    
+
     formBody.append('company', formData.company || '');
     formBody.append('message', formData.message);
 
@@ -133,7 +133,7 @@ export class ContactService {
   submitToFormspree(formData: ContactForm): Observable<ContactSubmissionResponse> {
     // Get your form endpoint from formspree.io
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
-    
+
     return from(
       fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',

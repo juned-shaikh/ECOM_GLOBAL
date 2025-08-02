@@ -48,7 +48,7 @@ export class ContactComponent implements OnInit {
 
       const formData: ContactForm = this.contactForm.value;
 
-      // Use Netlify Forms (recommended) - change to submitContactForm() for EmailJS
+      // Use Netlify Forms (testing) - change to submitContactForm() for EmailJS
       this.contactService.submitToNetlify(formData).subscribe({
         next: (response) => {
           this.isSubmitting = false;
@@ -57,6 +57,8 @@ export class ContactComponent implements OnInit {
           
           if (response.success) {
             this.contactForm.reset();
+            // Reset country code to default after form reset
+            this.contactForm.patchValue({ countryCode: '+91' });
           }
         },
         error: (error) => {

@@ -48,8 +48,8 @@ export class ContactComponent implements OnInit {
 
       const formData: ContactForm = this.contactForm.value;
 
-      // Use Netlify Forms (testing) - change to submitContactForm() for EmailJS
-      this.contactService.submitToNetlify(formData).subscribe({
+      // Use EmailJS (recommended) - change to submitToNetlify() for Netlify Forms
+      this.contactService.submitContactForm(formData).subscribe({
         next: (response) => {
           this.isSubmitting = false;
           this.submitSuccess = response.success;

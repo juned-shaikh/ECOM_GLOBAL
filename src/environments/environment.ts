@@ -1,9 +1,9 @@
 export const environment = {
   production: false,
   emailjs: {
-    serviceId: 'service_YOUR_ID',        // Replace with your actual EmailJS Service ID
-    templateId: 'template_YOUR_ID',      // Replace with your actual EmailJS Template ID  
-    publicKey: 'YOUR_ACTUAL_PUBLIC_KEY', // Replace with your actual EmailJS Public Key
-    recipientEmail: 'info@ecomglobaltech.com'  // Your business email
+    serviceId: 'service_2u6vtec',        // Replace with your actual Service ID from EmailJS
+    templateId: 'template_tioa2hc',      // Replace with your actual Template ID from EmailJS  
+    publicKey: 'xLhqWhGqW6qeq0oL1',        // Replace with your actual Public Key from EmailJS
+    recipientEmail: 'info@ecomglobaltech.com'  // Where you want to receive emails
   }
 };

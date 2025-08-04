@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { filter, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,25 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
   isMenuOpen = false;
+  private routerSubscription: Subscription = new Subscription();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    // Subscribe to router events to scroll to top on route changes
+    this.routerSubscription = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+  }
+
+  ngOnDestroy() {
+    // Clean up subscription to prevent memory leaks
+    this.routerSubscription.unsubscribe();
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

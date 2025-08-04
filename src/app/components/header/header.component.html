@@ -15,7 +15,7 @@
     <div class="contact-info d-none d-lg-flex align-items-center me-4">
       <div class="contact-item me-4">
         <i class="bi bi-telephone text-success me-2"></i>
-        <span class="small">+91 84356 83963</span>
+        <span class="small">+91 75096 56068</span>
       </div>
       <div class="contact-item">
         <i class="bi bi-envelope text-success me-2"></i>
@@ -43,7 +43,7 @@
             aria-expanded="false" [class.active]="isActiveRoute('/services')">
             Services
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" style="width: 200px;">
             <li><a class="dropdown-item" routerLink="/services" (click)="closeMenu()">All Services</a></li>
             <li>
               <hr class="dropdown-divider">
@@ -56,8 +56,10 @@
                 <li><a class="dropdown-item" (click)="navigateToService('Ecommerce Web Designing')">Ecommerce Web
                     Designing</a></li>
                 <li><a class="dropdown-item" (click)="navigateToService('Development')">Development</a></li>
-                <li><a class="dropdown-item" (click)="navigateToService('Digital Marketing')">Digital Marketing</a></li>
               </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" (click)="navigateToService('Development')" href="#" data-bs-toggle="dropdown">Digital Marketing</a>
             </li>
 
             <!-- Platform Services -->

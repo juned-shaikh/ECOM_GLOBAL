@@ -10,45 +10,41 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
   services = [
     {
-      icon: 'bi-globe',
-      title: 'Global Market Entry',
-      description: 'Strategic guidance for entering international e-commerce markets with confidence and success.'
+      icon: 'bi-cart-check',
+      title: 'Ecommerce',
+      description: 'Complete e-commerce solutions from store setup to payment integration and inventory management.'
     },
     {
-      icon: 'bi-graph-up-arrow',
-      title: 'Sales Optimization',
-      description: 'Data-driven strategies to maximize your online sales and improve conversion rates globally.'
+      icon: 'bi-code-slash',
+      title: 'Website Development',
+      description: 'Custom responsive websites built with modern technologies for optimal performance and user experience.'
     },
     {
-      icon: 'bi-gear',
-      title: 'Platform Integration',
-      description: 'Seamless integration with major e-commerce platforms and international payment systems.'
+      icon: 'bi-megaphone',
+      title: 'Digital Marketing',
+      description: 'Strategic digital marketing campaigns to boost your online presence and drive targeted traffic.'
     },
-    {
-      icon: 'bi-shield-check',
-      title: 'Compliance & Security',
-      description: 'Ensure your global operations meet international regulations and security standards.'
-    }
+
   ];
 
   benefits = [
     {
       icon: 'bi-award',
       title: 'Proven Expertise',
-      description: 'Years of experience helping businesses succeed in global e-commerce markets.'
+      description: 'Years of experience helping ecommerce businesses succeed in domestic & global e-commerce marketplace.'
     },
     {
       icon: 'bi-people',
       title: 'Dedicated Support',
-      description: 'Personalized consulting with dedicated account managers for your success.'
+      description: 'Personalized consulting with dedicated account managers for your account'
     },
     {
       icon: 'bi-lightning',
       title: 'Fast Implementation',
-      description: 'Quick deployment of strategies to get you selling globally as soon as possible.'
+      description: 'Personalized consulting with dedicated account managers for your account'
     }
   ];
 

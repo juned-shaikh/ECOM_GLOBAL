@@ -15,17 +15,17 @@ export class HomeComponent {
     {
       icon: 'bi-cart-check',
       title: 'Ecommerce',
-      description: 'Complete e-commerce solutions from store setup to payment integration and inventory management.'
+      description: 'Complete e-commerce solutions from store setup to sales growth and brand expansion to the next level.'
     },
     {
       icon: 'bi-code-slash',
       title: 'Website Development',
-      description: 'Custom responsive websites built with modern technologies for optimal performance and user experience.'
+      description: 'Custom website development solutions tailored to elevate your brand, enhance user experience, and drive online growth.'
     },
     {
       icon: 'bi-megaphone',
       title: 'Digital Marketing',
-      description: 'Strategic digital marketing campaigns to boost your online presence and drive targeted traffic.'
+      description: 'Result-driven digital marketing solutions to boost your online visibility, engage your audience, and accelerate business growth.'
     },
 
   ];
@@ -39,12 +39,12 @@ export class HomeComponent {
     {
       icon: 'bi-people',
       title: 'Dedicated Support',
-      description: 'Personalized consulting with dedicated account managers for your account'
+      description: 'Personalized consulting with dedicated account managers for your account.'
     },
     {
       icon: 'bi-lightning',
       title: 'Fast Implementation',
-      description: 'Personalized consulting with dedicated account managers for your account'
+      description: 'We quickly implement strategies to drive your brand’s growth on a global scale.'
     }
   ];
 

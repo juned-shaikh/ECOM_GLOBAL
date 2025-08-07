@@ -76,24 +76,71 @@
 }
 
 .dropdown-menu {
-  border: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  border-radius: 0.5rem;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  border-radius: 12px;
   padding: 0.5rem 0;
   margin-top: 0.5rem;
+  min-width: 280px;
+  background: #ffffff;
+}
+
+.dropdown-header {
+  padding: 0.4rem 1rem 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #28a745;
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .dropdown-item {
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   font-weight: 500;
-  color: #2d3748;
-  transition: all 0.3s ease;
+  color: #495057;
+  transition: all 0.2s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
 }
 
 .dropdown-item:hover {
   background-color: #f8f9fa;
   color: #28a745;
-  padding-left: 2rem;
+  transform: translateX(3px);
+}
+
+.dropdown-item:focus {
+  background-color: #f8f9fa;
+  color: #28a745;
+}
+
+.dropdown-item i {
+  width: 18px;
+  text-align: center;
+  margin-right: 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* Specific icon colors */
+.dropdown-item:not(:hover) i.fa-th-large { color: #28a745; }
+.dropdown-item:not(:hover) i.fa-code { color: #007bff; }
+.dropdown-item:not(:hover) i.fa-bullhorn { color: #fd7e14; }
+.dropdown-item:not(:hover) i.fa-amazon { color: #ff9900; }
+.dropdown-item:not(:hover) i.fa-shopping-bag { color: #96bf48; }
+.dropdown-item:not(:hover) i.fa-shopping-cart { color: #047bd6; }
+.dropdown-item:not(:hover) i.fa-ebay { color: #e53238; }
+.dropdown-item:not(:hover) i.fa-store { color: #004c91; }
+.dropdown-item:not(:hover) i.fa-etsy { color: #f56400; }
+.dropdown-item:not(:hover) i.fa-star { color: #ffc107; }
+.dropdown-item:not(:hover) i.fa-plus { color: #6c757d; }
+
+.dropdown-divider {
+  margin: 0.4rem 1rem;
+  border-color: #e9ecef;
 }
 
 .btn-success {

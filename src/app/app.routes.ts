@@ -3,12 +3,16 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ServicesComponent } from './components/services/services.component';
+import { WebDevelopmentComponent } from './components/web-development/web-development.component';
+import { DigitalMarketingComponent } from './components/digital-marketing/digital-marketing.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'services', component: ServicesComponent },
+  { path: 'web-development', component: WebDevelopmentComponent },
+  { path: 'digital-marketing', component: DigitalMarketingComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '/home' }
 ];

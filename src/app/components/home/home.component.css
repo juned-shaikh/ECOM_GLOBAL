@@ -48,6 +48,7 @@
 .hero-illustration {
   position: relative;
   z-index: 2;
+  top: -60px;
 }
 
 .globe-container {
@@ -111,13 +112,23 @@
 }
 
 @keyframes rotate {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @keyframes orbit {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* Services Section */
@@ -325,47 +336,54 @@
   .display-3 {
     font-size: 2.5rem;
   }
-  
+
   .display-4 {
     font-size: 2rem;
   }
-  
+
   .display-5 {
     font-size: 1.75rem;
   }
-  
+
   .hero-section {
     padding: 2rem 0;
   }
-  
+
   .min-vh-60 {
     min-height: auto;
   }
-  
+
+  /* Mobile hero visual adjustments */
+  .hero-illustration {
+    top: -20px;
+    /* Less negative top for mobile */
+    margin-bottom: 2rem;
+  }
+
   .globe-container {
     width: 200px;
     height: 200px;
   }
-  
+
   .hero-globe {
     font-size: 5rem;
   }
-  
+
   .orbit-1 {
     width: 150px;
     height: 150px;
   }
-  
+
   .orbit-2 {
     width: 180px;
     height: 180px;
   }
-  
+
   .orbit-3 {
     width: 200px;
     height: 200px;
   }
-  
+
   .satellite {
     width: 30px;
     height: 30px;
@@ -373,13 +391,81 @@
     top: -15px;
     left: -15px;
   }
-  
+
   .hero-stats {
     margin-top: 2rem;
   }
-  
+
+  .hero-content {
+    text-align: center;
+    /* Center text on mobile */
+  }
+
   .benefit-icon {
     width: 60px;
     height: 60px;
+  }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  .display-3 {
+    font-size: 2rem;
+  }
+
+  .hero-illustration {
+    top: -10px;
+    /* Even less negative top for small phones */
+    margin-bottom: 1.5rem;
+  }
+
+  .globe-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-globe {
+    font-size: 4rem;
+  }
+
+  .orbit-1 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .orbit-2 {
+    width: 140px;
+    height: 140px;
+  }
+
+  .orbit-3 {
+    width: 160px;
+    height: 160px;
+  }
+
+  .satellite {
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+    top: -12px;
+    left: -12px;
+  }
+
+  .hero-stats .row {
+    text-align: center;
+  }
+
+  .hero-stats .col-4 {
+    margin-bottom: 1rem;
+  }
+
+  .text-gradient-light {
+    font-size: large !important;
+    /* Override inline style for mobile */
+  }
+
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
   }
 }

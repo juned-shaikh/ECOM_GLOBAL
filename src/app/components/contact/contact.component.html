@@ -72,15 +72,19 @@
                 <!-- Phone Field -->
                 <div class="col-md-6">
                   <label for="phone" class="form-label">Phone Number</label>
+
+                  <!-- Country Search and Toggle -->
+
                   <div class="phone-input-group">
                     <select class="country-select" formControlName="countryCode" id="countryCode">
-                      <option *ngFor="let country of countryCodes" [value]="country.code">
-                        {{country.flag}} {{country.code}}
+                      <option *ngFor="let country of displayedCountryCodes" [value]="country.code">
+                        {{country.flag}} ({{country.code}})
                       </option>
                     </select>
                     <input type="tel" class="form-control phone-input" id="phone" formControlName="phone"
                       placeholder="Enter your phone number">
                   </div>
+               
                 </div>
 
                 <!-- Company Field -->

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ContactService } from '../../services/contact.service';
 import { ContactForm } from '../../models/contact.model';
+import { COUNTRY_CODES, POPULAR_COUNTRY_CODES, CountryCode } from '../../data/country-codes';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
@@ -16,91 +17,31 @@ export class ContactComponent implements OnInit {
   isSubmitting = false;
   submitMessage = '';
   submitSuccess = false;
-  
-  // Popular country codes for better UX
-  countryCodes = [
-    { code: '+91', country: 'India', flag: '🇮🇳' },
-    { code: '+1', country: 'United States', flag: '🇺🇸' },
-    { code: '+44', country: 'United Kingdom', flag: '🇬🇧' },
-    { code: '+61', country: 'Australia', flag: '🇦🇺' },
-    { code: '+1', country: 'Canada', flag: '🇨🇦' },
-    { code: '+49', country: 'Germany', flag: '🇩🇪' },
-    { code: '+33', country: 'France', flag: '🇫🇷' },
-    { code: '+81', country: 'Japan', flag: '🇯🇵' },
-    { code: '+86', country: 'China', flag: '🇨🇳' },
-    { code: '+82', country: 'South Korea', flag: '🇰🇷' },
-    { code: '+65', country: 'Singapore', flag: '🇸🇬' },
-    { code: '+971', country: 'UAE', flag: '🇦🇪' },
-    { code: '+966', country: 'Saudi Arabia', flag: '🇸🇦' },
-    { code: '+55', country: 'Brazil', flag: '🇧🇷' },
-    { code: '+52', country: 'Mexico', flag: '🇲🇽' },
-    { code: '+7', country: 'Russia', flag: '🇷🇺' },
-    { code: '+90', country: 'Turkey', flag: '🇹🇷' },
-    { code: '+27', country: 'South Africa', flag: '🇿🇦' },
-    { code: '+234', country: 'Nigeria', flag: '🇳🇬' },
-    { code: '+39', country: 'Italy', flag: '🇮🇹' },
-    { code: '+34', country: 'Spain', flag: '🇪🇸' },
-    { code: '+31', country: 'Netherlands', flag: '🇳🇱' },
-    { code: '+46', country: 'Sweden', flag: '🇸🇪' },
-    { code: '+47', country: 'Norway', flag: '🇳🇴' },
-    { code: '+45', country: 'Denmark', flag: '🇩🇰' },
-    { code: '+41', country: 'Switzerland', flag: '🇨🇭' },
-    { code: '+43', country: 'Austria', flag: '🇦🇹' },
-    { code: '+32', country: 'Belgium', flag: '🇧🇪' },
-    { code: '+351', country: 'Portugal', flag: '🇵🇹' },
-    { code: '+353', country: 'Ireland', flag: '🇮🇪' },
-    { code: '+48', country: 'Poland', flag: '🇵🇱' },
-    { code: '+420', country: 'Czech Republic', flag: '🇨🇿' },
-    { code: '+36', country: 'Hungary', flag: '🇭🇺' },
-    { code: '+30', country: 'Greece', flag: '🇬🇷' },
-    { code: '+358', country: 'Finland', flag: '🇫🇮' },
-    { code: '+380', country: 'Ukraine', flag: '🇺🇦' },
-    { code: '+7', country: 'Kazakhstan', flag: '🇰🇿' },
-    { code: '+62', country: 'Indonesia', flag: '🇮🇩' },
-    { code: '+60', country: 'Malaysia', flag: '🇲🇾' },
-    { code: '+66', country: 'Thailand', flag: '🇹🇭' },
-    { code: '+63', country: 'Philippines', flag: '🇵🇭' },
-    { code: '+84', country: 'Vietnam', flag: '🇻🇳' },
-    { code: '+880', country: 'Bangladesh', flag: '🇧🇩' },
-    { code: '+92', country: 'Pakistan', flag: '🇵🇰' },
-    { code: '+94', country: 'Sri Lanka', flag: '🇱🇰' },
-    { code: '+977', country: 'Nepal', flag: '🇳🇵' },
-    { code: '+852', country: 'Hong Kong', flag: '🇭🇰' },
-    { code: '+886', country: 'Taiwan', flag: '🇹🇼' },
-    { code: '+64', country: 'New Zealand', flag: '🇳🇿' },
-    { code: '+20', country: 'Egypt', flag: '🇪🇬' },
-    { code: '+972', country: 'Israel', flag: '🇮🇱' },
-    { code: '+98', country: 'Iran', flag: '🇮🇷' },
-    { code: '+964', country: 'Iraq', flag: '🇮🇶' },
-    { code: '+962', country: 'Jordan', flag: '🇯🇴' },
-    { code: '+961', country: 'Lebanon', flag: '🇱🇧' },
-    { code: '+965', country: 'Kuwait', flag: '🇰🇼' },
-    { code: '+968', country: 'Oman', flag: '🇴🇲' },
-    { code: '+974', country: 'Qatar', flag: '🇶🇦' },
-    { code: '+973', country: 'Bahrain', flag: '🇧🇭' },
-    { code: '+54', country: 'Argentina', flag: '🇦🇷' },
-    { code: '+56', country: 'Chile', flag: '🇨🇱' },
-    { code: '+57', country: 'Colombia', flag: '🇨🇴' },
-    { code: '+51', country: 'Peru', flag: '🇵🇪' },
-    { code: '+593', country: 'Ecuador', flag: '🇪🇨' },
-    { code: '+598', country: 'Uruguay', flag: '🇺🇾' },
-    { code: '+595', country: 'Paraguay', flag: '🇵🇾' },
-    { code: '+591', country: 'Bolivia', flag: '🇧🇴' },
-    { code: '+58', country: 'Venezuela', flag: '🇻🇪' },
-    { code: '+254', country: 'Kenya', flag: '🇰🇪' },
-    { code: '+233', country: 'Ghana', flag: '🇬🇭' },
-    { code: '+255', country: 'Tanzania', flag: '🇹🇿' },
-    { code: '+256', country: 'Uganda', flag: '🇺🇬' },
-    { code: '+251', country: 'Ethiopia', flag: '🇪🇹' },
-    { code: '+212', country: 'Morocco', flag: '🇲🇦' },
-    { code: '+213', country: 'Algeria', flag: '🇩🇿' },
-    { code: '+216', country: 'Tunisia', flag: '🇹🇳' }
-  ];
+  showAllCountries = false;
+  searchTerm = '';
+
+  // Use comprehensive country codes data
+  allCountryCodes: CountryCode[] = COUNTRY_CODES;
+  popularCountryCodes: CountryCode[] = POPULAR_COUNTRY_CODES;
+
+  get displayedCountryCodes(): CountryCode[] {
+    const codes =  this.allCountryCodes;
+
+    if (!this.searchTerm) {
+      return codes;
+    }
+
+    return codes.filter(country =>
+      country.country.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      country.code.includes(this.searchTerm) ||
+      country.countryCode.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
 
   constructor(
     private fb: FormBuilder,
     private contactService: ContactService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.initializeForm();
@@ -134,7 +75,7 @@ export class ContactComponent implements OnInit {
           this.isSubmitting = false;
           this.submitSuccess = response.success;
           this.submitMessage = response.message;
-          
+
           if (response.success) {
             this.contactForm.reset();
             // Reset country code to default after form reset

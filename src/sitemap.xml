@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage - Primary landing page for ecommerce experts -->
+  <url>
+    <loc>https://ecomglobaltech.com/</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ecomglobaltech.com/assets/images/og-image.jpg</image:loc>
+      <image:title>Ecommerce Experts &amp; Digital Marketing Agency</image:title>
+      <image:caption>Leading ecommerce service provider offering expert consulting and digital marketing services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Home page (duplicate of root for Angular routing) -->
+  <url>
+    <loc>https://ecomglobaltech.com/home</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Services - High priority for ecommerce service provider keyword -->
+  <url>
+    <loc>https://ecomglobaltech.com/services</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://ecomglobaltech.com/assets/images/services-og-image.jpg</image:loc>
+      <image:title>Ecommerce Service Provider - Expert Solutions</image:title>
+      <image:caption>Comprehensive ecommerce consulting and digital marketing agency services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Digital Marketing - Target keyword page -->
+  <url>
+    <loc>https://ecomglobaltech.com/digital-marketing</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ecomglobaltech.com/assets/images/digital-marketing-og-image.jpg</image:loc>
+      <image:title>Digital Marketing Agency Services</image:title>
+      <image:caption>Professional digital marketing agency providing comprehensive online marketing solutions</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Web Development - Target keyword page -->
+  <url>
+    <loc>https://ecomglobaltech.com/web-development</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ecomglobaltech.com/assets/images/web-dev-og-image.jpg</image:loc>
+      <image:title>Professional Web Development Services</image:title>
+      <image:caption>Expert web development services for ecommerce businesses and online stores</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About - Company information for trust signals -->
+  <url>
+    <loc>https://ecomglobaltech.com/about</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ecomglobaltech.com/assets/images/about-og-image.jpg</image:loc>
+      <image:title>About Our Ecommerce Experts Team</image:title>
+      <image:caption>Meet our team of professional ecommerce consultants and digital marketing experts</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact - Important for local SEO and conversions -->
+  <url>
+    <loc>https://ecomglobaltech.com/contact</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Future pages for better keyword targeting (add when created) -->
+  <!--
+  <url>
+    <loc>https://ecomglobaltech.com/ecommerce-experts</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://ecomglobaltech.com/ecommerce-consultants</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://ecomglobaltech.com/blog</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+</urlset>

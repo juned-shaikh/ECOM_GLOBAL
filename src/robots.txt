@@ -1,12 +1,12 @@
 # Robots.txt for Ecom Global Tech - Ecommerce Experts & Digital Marketing Agency
-# Website: https://ecomglobaltech.com
+# Website: https://www.ecomglobaltech.com
 
 # Allow all search engines to crawl the entire site
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://ecomglobaltech.com/sitemap.xml
+Sitemap: https://www.ecomglobaltech.com/sitemap.xml
 
 # Block access to technical files and directories
 Disallow: /admin/
@@ -41,5 +41,5 @@ User-agent: DotBot
 Disallow: /
 
 # Additional sitemap references (if you create more)
-# Sitemap: https://ecomglobaltech.com/blog-sitemap.xml
-# Sitemap: https://ecomglobaltech.com/services-sitemap.xml
+# Sitemap: https://www.ecomglobaltech.com/blog-sitemap.xml
+# Sitemap: https://www.ecomglobaltech.com/services-sitemap.xml

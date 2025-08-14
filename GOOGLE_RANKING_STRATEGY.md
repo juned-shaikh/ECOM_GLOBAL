@@ -125,8 +125,8 @@ Create `/blog` route with articles targeting your keywords:
 ```
 
 #### Google Search Console:
-1. Add property: https://ecomglobaltech.com
-2. Submit sitemap: https://ecomglobaltech.com/sitemap.xml
+1. Add property: https://www.ecomglobaltech.com
+2. Submit sitemap: https://www.ecomglobaltech.com/sitemap.xml
 3. Monitor keyword performance
 
 ### 9. Content Marketing Calendar

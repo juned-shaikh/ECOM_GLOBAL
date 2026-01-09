@@ -33,8 +33,8 @@ export class ServicesComponent {
 
   platforms: Platform[] = [
     {
-      name: 'Amazon Global',
-      logo: 'bi-amazon',
+      name: 'Amazon Account Managment',
+      logo: '',
       description: 'World\'s largest e-commerce marketplace with global reach across 20+ countries.',
       features: ['Seller account launch/onboarding',
         'Product listing/ cataloguing',
